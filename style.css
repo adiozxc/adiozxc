@@ -1,86 +1,243 @@
+/* 全局基础设置 */
 body {
     margin: 0;
     font-family: "Helvetica Neue", sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #004080;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 4px solid white;
-}
-
-main {
-    padding: 2rem 0;
-}
-
-section {
-    margin-bottom: 2rem;
+html {
+    scroll-behavior: smooth;
 }
 
 h1,
 h2 {
     margin-bottom: 0.5rem;
+    color: #004080;
 }
 
-footer {
-    background-color: #eee;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.header-flex {
+/* 顶部欢迎图部分 */
+.hero {
+    position: relative;
+    height: 80vh;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 0;
-    flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(233, 229, 229, 0.1);
+}
+
+.hero .hero-overlay {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* 降低背景不透明度，增加透明度 */
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 添加细微边框增强清晰度 */
+    box-shadow: 0 8px 32px rgba(73, 72, 72, 0.2); /* 增加阴影深度 */
+}
+
+.hero .hero-overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero .hero-overlay p {
+    font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 导航栏 */
+nav {
+    background-color: rgba(0, 64, 128, 0.9);
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    height: 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+/* 两栏布局 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.two-columns {
+    display: flex;
+    gap: 3rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    position: relative;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 350px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 64, 128, 0.1);
 }
 
-.intro-text {
-    max-width: 500px;
+.short-intro {
+    width: 100%;
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
+.main-content {
+    flex: 2;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 64, 128, 0.1);
+}
+
+.two-columns::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    width: 2px;
+    background: linear-gradient(to bottom, #004080, #0066cc 50%, #004080);
+    border-radius: 2px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* 头像 */
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
-/* 页脚样式 */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* 图库 */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .two-columns {
+        flex-direction: column;
+    }
+
+    .gallery {
+        justify-content: center;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .two-columns::before {
+        display: none;
+    }
+}
+
+/* 页脚 */
+footer {
+    background-color: rgba(0, 64, 128, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
 .footer-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #004080;
+    background-color: rgba(0, 64, 128, 0.9);
     color: white;
     padding: 1rem 2rem;
     font-size: 0.9rem;
     gap: 0.5rem;
+    backdrop-filter: blur(5px);
 }
 
 .footer-flex a {
@@ -92,14 +249,13 @@ footer {
     text-decoration: underline;
 }
 
-/* 回顶部按钮样式 */
+/* 回顶部按钮 */
 #backToTop {
     position: fixed;
     bottom: 40px;
     right: 40px;
     display: none;
-    /* 默认隐藏 */
-    background-color: #004080;
+    background-color: rgba(0, 64, 128, 0.8);
     color: white;
     border: none;
     padding: 0.6rem 1rem;
@@ -109,8 +265,164 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 #backToTop:hover {
     background-color: #0066cc;
+}
+
+/* 模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content .qr-code {
+    width: 200px;
+    height: auto;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* 默认隐藏按钮 */
+.nav-toggle {
+    display: none;
+}
+
+/* 响应式样式：屏幕宽度小于768px 时启用 */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1em;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+}
+
+.wechat-link {
+    background: none;
+    border: none;
+    color: #a0d8ef;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+.wechat-link:hover {
+    text-decoration: underline;
+}
+
+/* 新增：卡片样式（统一风格） */
+.experience-card,
+.project-item,
+.job-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 64, 128, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover,
+.project-item:hover,
+.job-item:hover {
+    transform: translateY(-5px);
+}
+
+/* 教育时间线 */
+.education-timeline {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* 技能与荣誉分块 */
+.skill-block,
+.award-block {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-block ul,
+.award-block ul {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+}
+
+/* 响应式调整：小屏幕下堆叠布局 */
+@media (max-width: 768px) {
+
+    .skill-block,
+    .award-block {
+        flex-direction: column;
+    }
 }

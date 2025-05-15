@@ -9,61 +9,177 @@
 </head>
 
 <body>
-    <script src="js/main.js"></script>
-    <header>
-        <div class="container header-flex">
-            <img src="img/Liqun.jpg" alt="证件照" class="profile-pic" />
-            <div class="intro-text">
-                <h1>Hello! New Friend!</h1>
-                <p>电子商务专业（工程技术方向） · 2022级</p>
-            </div>
+    <!-- 欢迎图 + 欢迎文字 -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Hello！ New friend！</h1>
+            <p>欢迎光临我的主页！</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-        <section>
-            <h2>🎓 教育背景</h2>
-            <p>大连理工大学，电子商务（工程技术方向）本科生</p>
-            <p>入学时间：2022年</p>
-        </section>
+    <nav>
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <ul id="navMenu" class="nav-menu">
+            <li><a href="#education" class="active">教育背景</a></li>
+            <li><a href="#courses">主修课程</a></li>
+            <li><a href="#internships">实习经历</a></li>
+            <li><a href="#projects">实践经历</a></li>
+            <li><a href="#campus-jobs">校园工作</a></li>
+            <li><a href="#skills">技能与荣誉</a></li>
+            <li><a href="#hobbies">兴趣爱好</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+    </nav>
 
-        <section>
-            <h2>📚 主修课程</h2>
-            <ul>
-                <li>运筹学</li>
-                <li>博弈论</li>
-                <li>数据结构</li>
-                <li>计算机网络</li>
-                <li>网页设计</li>
-            </ul>
-        </section>
+    <!-- 🧱 主体内容 -->
+    <main class="container two-columns">
+        <!-- 左侧：证件照 + 简介 -->
+        <aside class="sidebar">
+            <img src="img/Liqun.jpg" alt="证件照" class="profile-pic" />
+            <div class="short-intro">
+                <h2>关于我</h2>
+                <p class="info-item"><span class="icon">✦</span> 姓名：李群</p>
+                <p class="info-item"><span class="icon">✦</span> 性别：男</p>
+                <p class="info-item"><span class="icon">✦</span> 出生日期：2004年2月18日</p>
+                <p class="info-item"><span class="icon">✦</span> 政治面貌：中共预备党员</p>
+                <p class="info-item"><span class="icon">✦</span> 专业：电子商务（工程技术方向）</p>
+                <p class="info-item"><span class="icon">✦</span> 学历：本科在读</p>
+            </div>
+        </aside>
 
-        <section>
-            <h2>🎯 兴趣爱好</h2>
-            <p>我对前端开发、AI 技术、数据分析和用户体验设计非常感兴趣。</p>
-            <p>在闲暇时，我喜欢阅读科技类文章、参与开源项目、摄影、旅行以及学习新工具。</p>
-        </section>
+        <!-- 右侧：详细介绍 + 照片 -->
+        <section class="main-content">
+            <section id="education">
+                <h2>🎓 教育背景</h2>
+                <p>大连理工大学 | 电子商务（工程技术方向） | 本科在读 | 2022年入学</p>
+                <div class="education-timeline">
+                    <p>2016 - 2019 | 彰武第三初级中学</p>
+                    <p>2019 - 2022 | 彰武县高级中学</p>
+                    <p>2010 - 2016 | 辽宁省彰武县实验小学</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>📫 联系方式</h2>
-            <p>你可以通过添加邮箱或社交链接等方式来联系我。</p>
+            <section id="courses">
+                <h2>📚 主修课程</h2>
+                <ul>
+                    <li>运筹学、博弈论</li>
+                    <li>数据结构、计算机网络</li>
+                    <li>Java 与面向对象程序设计</li>
+                </ul>
+            </section>
+
+            <section id="internships">
+                <h2>💼 实习经历</h2>
+                <div class="experience-card">
+                    <h3>东软集团（大连）软件技术实习生</h3>
+                    <p>实习时间：2023.07 - 2023.09</p>
+                    <ul>
+                        <li>参与课后辅导班招生方案策划与执行</li>
+                        <li>负责数据分析、统计及效果跟踪</li>
+                        <li>学习软件开发设计，掌握 QT designer 基础</li>
+                        <li>熟练使用 Java、Python 开发工具</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 新增：实践经历 -->
+            <section id="projects">
+                <h2>🚀 实践经历</h2>
+                <div class="project-item">
+                    <h3>“行者无疆·纸绎齊缘”实践团队 | 调研专员</h3>
+                    <p>职责：组织实践安排、对接机构推广传统文化，获校三等奖</p>
+                </div>
+                <div class="project-item">
+                    <h3>“瀚海筑梦”实践团队 | 副队长/调研组组长</h3>
+                    <p>职责：选拔队员、策划实践活动，团队获校一等奖</p>
+                </div>
+            </section>
+
+            <!-- 新增：校园工作 -->
+            <section id="campus-jobs">
+                <h2>📌 校园工作</h2>
+                <div class="job-item">
+                    <h3>团委创新创业部负责人 | 2023.09 - 2024.06</h3>
+                    <ul>
+                        <li>策划院内科创活动，主持材料评审、答辩等</li>
+                        <li>创新活动形式，提升活动特色与参与度</li>
+                        <li>组织部门团建，增强团队凝聚力</li>
+                    </ul>
+                </div>
+                <div class="job-item">
+                    <h3>经济学类2203班组织委员 | 2022.09 - 至今</h3>
+                    <p>组织团建、班会及志愿服务，制定班级帮扶方案</p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>🌟 技能与荣誉</h2>
+                <div class="skill-block">
+                    <h3>专业技能</h3>
+                    <ul>
+                        <li>编程语言：C、Java、Python、HTML/CSS/JS</li>
+                        <li>工具：MATLAB、QT Designer</li>
+                        <li>软技能：数据分析、活动策划、团队协作</li>
+                    </ul>
+                </div>
+                <div class="award-block">
+                    <h3>荣誉奖项</h3>
+                    <ul>
+                        <li>2023-2024学年国家励志奖学金</li>
+                        <li>2023CGMA商业精英挑战赛省级一等奖</li>
+                        <li>多项校级荣誉、奖学金</li>
+                        <li>英语 CET - 4、计算机二级证书(Python)</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="hobbies">
+                <h2>🎯 兴趣爱好</h2>
+                <p>我热爱探索前端、后端开发、AI 技术和数据可视化，喜欢摄影、旅行和写作。</p>
+                <div class="gallery">
+                    <img src="img/picture1.jpg" alt="照片1" />
+                    <img src="img/picture2.jpg" alt="照片2" />
+                    <img src="img/picture3.jpg" alt="照片3" />
+                    <img src="img/picture4.jpg" alt="照片4" />
+                </div>
+            </section>
+
+
+            <section id="contact">
+                <h2>📫 联系方式</h2>
+                <p>邮箱：<a href="mailto:m15042536579@163.com">m15042536579@163.com</a></p>
+                <p>
+                    社交链接：
+                    <a href="https://github.com/adiozxc" target="_blank">GitHub</a> |
+                    <button id="wechatBtn" class="wechat-link" type="button">WeChat</button>
+                </p>
+            </section>
         </section>
     </main>
 
+    <!-- ⬇️ 页脚 -->
     <footer>
         <div class="container footer-flex">
             <p>© 2025 Liqun20223112083</p>
-            <p>联系邮箱：<a href="mailto:m15042536579@163.com">youremail@example.com</a></p>
-            <p>
-                社交链接：
-                <a href="https://github.com/yourgithub" target="_blank">GitHub</a> |
-                <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
-            </p>
+            <p>感谢您的访问！</p>
         </div>
     </footer>
 
+    <!-- 微信二维码模态框 -->
+    <div id="wechatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>扫一扫添加我的微信：</p>
+            <img src="img/微信二维码.jpg" alt="微信二维码" class="qr-code">
+        </div>
+    </div>
+
+    <!-- 🔝 回顶部按钮 -->
     <button id="backToTop" title="回到顶部">↑</button>
 
+    <!-- 引入 JS -->
+    <script src="main.js"></script>
 </body>
 
 </html>
