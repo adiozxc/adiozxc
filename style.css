@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid white;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+}
+
+.intro-text {
+    max-width: 500px;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 页脚样式 */
+.footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #004080;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+}
+
+.footer-flex a {
+    color: #a0d8ef;
+    text-decoration: none;
+}
+
+.footer-flex a:hover {
+    text-decoration: underline;
+}
+
+/* 回顶部按钮样式 */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    /* 默认隐藏 */
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background-color: #0066cc;
+}
